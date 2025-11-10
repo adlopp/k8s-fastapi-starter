@@ -13,9 +13,11 @@ spec:
       labels:
         app: api
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: api
-          image: ghcr.io/TU_USUARIO/k8s-fastapi-starter:latest
+          image: ghcr.io/adlopp/k8s-fastapi-starter:latest
           ports:
             - containerPort: 8000
           readinessProbe:
